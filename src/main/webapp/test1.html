@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_icon
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/26
+  Time(创建时间)： 10:33
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <i class="el-icon-edit"></i>
+    <div class="el-icon-box"></div>
+    <div class="el-icon-delete"></div>
+    <div class="el-icon-circle-check"></div>
+    <div class="el-icon-check"></div>
+    <el-button type="primary" icon="el-icon-search">搜索</el-button>
+    <el-button type="primary" icon="el-icon-download">下载</el-button>
+    <el-button @click="change" type="primary" :icon="icon">{{status}}</el-button>
+
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            icon: "el-icon-loading",
+            icon2: "el-icon-close",
+            status: "加载中,点击取消"
+        },
+        methods: {
+            change: function ()
+            {
+                this.icon = this.icon2;
+                this.status = "已取消";
+            }
+        }
+
+    })
+</script>
+
+</body>
+</html>
